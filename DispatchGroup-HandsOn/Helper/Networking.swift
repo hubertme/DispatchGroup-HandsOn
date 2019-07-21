@@ -38,4 +38,21 @@ final class Networking {
             }
         }.resume()
     }
+    
+    func fetchDummyData() -> [Feed] {
+        if let path = Bundle.main.path(forResource: "Data", ofType: "json") {
+            do {
+                let url = URL(fileURLWithPath: path)
+                let data = try Data(contentsOf: url, options: .mappedIfSafe)
+                
+                let feedData = try JSONDecoder().decode(Array<Feed>.self, from: data)
+                return feedData
+            } catch {
+                // Hanldle error
+                print("Error in fetching dummy data:", error.localizedDescription)
+            }
+        }
+        
+        return []
+    }
 }
