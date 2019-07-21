@@ -14,6 +14,10 @@ class Feed: Codable {
     let name: String
     let imageURL: String
     
+    var feedName: String {
+        return "\(self.name) - \(self.id)"
+    }
+    
     enum CodingKeys: String, CodingKey {
         case id, name
         case imageURL = "imageUrl"
