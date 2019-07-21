@@ -12,6 +12,8 @@
 		FC69E9EC22E487FA00AAC845 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC69E9EA22E487FA00AAC845 /* Main.storyboard */; };
 		FC69E9EE22E487FD00AAC845 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC69E9ED22E487FD00AAC845 /* Assets.xcassets */; };
 		FC69E9F122E487FD00AAC845 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC69E9EF22E487FD00AAC845 /* LaunchScreen.storyboard */; };
+		FC69E9FC22E488A300AAC845 /* Data.json in Resources */ = {isa = PBXBuildFile; fileRef = FC69E9FB22E488A300AAC845 /* Data.json */; };
+		FC69E9FE22E48B5B00AAC845 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC69E9FD22E48B5B00AAC845 /* Feed.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		FC69E9ED22E487FD00AAC845 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC69E9F022E487FD00AAC845 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC69E9F222E487FD00AAC845 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC69E9FB22E488A300AAC845 /* Data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Data.json; sourceTree = "<group>"; };
+		FC69E9FD22E48B5B00AAC845 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,8 @@
 		FC69E9F822E4881A00AAC845 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FC69E9FB22E488A300AAC845 /* Data.json */,
+				FC69E9FD22E48B5B00AAC845 /* Feed.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -149,6 +155,7 @@
 				FC69E9F122E487FD00AAC845 /* LaunchScreen.storyboard in Resources */,
 				FC69E9EE22E487FD00AAC845 /* Assets.xcassets in Resources */,
 				FC69E9EC22E487FA00AAC845 /* Main.storyboard in Resources */,
+				FC69E9FC22E488A300AAC845 /* Data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC69E9E922E487FA00AAC845 /* ViewController.swift in Sources */,
+				FC69E9FE22E48B5B00AAC845 /* Feed.swift in Sources */,
 				FC69E9E722E487FA00AAC845 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
