@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC48EA0C22E497DF00D60C01 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC48EA0B22E497DF00D60C01 /* FeedCell.swift */; };
 		FC69E9E722E487FA00AAC845 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC69E9E622E487FA00AAC845 /* AppDelegate.swift */; };
 		FC69E9E922E487FA00AAC845 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC69E9E822E487FA00AAC845 /* ViewController.swift */; };
 		FC69E9EC22E487FA00AAC845 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC69E9EA22E487FA00AAC845 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC48EA0B22E497DF00D60C01 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		FC69E9E322E487FA00AAC845 /* DispatchGroup-HandsOn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DispatchGroup-HandsOn.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC69E9E622E487FA00AAC845 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC69E9E822E487FA00AAC845 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				FC69E9E822E487FA00AAC845 /* ViewController.swift */,
+				FC48EA0B22E497DF00D60C01 /* FeedCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC69E9E922E487FA00AAC845 /* ViewController.swift in Sources */,
+				FC48EA0C22E497DF00D60C01 /* FeedCell.swift in Sources */,
 				FC69E9FE22E48B5B00AAC845 /* Feed.swift in Sources */,
 				FC69E9E722E487FA00AAC845 /* AppDelegate.swift in Sources */,
 				FC69EA0122E48CE600AAC845 /* Networking.swift in Sources */,

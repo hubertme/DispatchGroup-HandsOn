@@ -10,23 +10,36 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var imageView: UIImageView!
-    
     var feedData = [Feed]()
+    
+    @IBOutlet weak var feedTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.testImageFetch()
+        self.feedData = Networking.shared.fetchDummyData()
+        self.setupElements()
     }
     
-    private func testImageFetch() {
-        Networking.shared.fetchImageFromServer(stringUrl: "https://images.pexels.com/photos/2668676/pexels-photo-2668676.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500", successCompletion: { (image) in
-            self.imageView.image = image
-        }) {
-            print("Fail to load image")
-        }
+    private func setupElements() {
+        self.feedTableView.register(FeedCell.nib, forCellReuseIdentifier: FeedCell.cellDescription)
         
-        feedData = Networking.shared.fetchDummyData()
+        self.feedTableView.delegate = self
+        self.feedTableView.dataSource = self
+    }
+}
+
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let feedCell = self.feedTableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as! FeedCell
+        return feedCell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
 }
 
