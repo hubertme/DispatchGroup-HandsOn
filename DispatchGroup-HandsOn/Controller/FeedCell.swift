@@ -24,7 +24,6 @@ class FeedCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.fetchFeedData()
     }
     
     private func fetchFeedData() {
@@ -39,5 +38,6 @@ class FeedCell: UITableViewCell {
     
     func dependencyInjection(feed: Feed) {
         self.feed = feed
+        self.fetchFeedData()
     }
 }

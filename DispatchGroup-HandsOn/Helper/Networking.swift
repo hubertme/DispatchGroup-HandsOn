@@ -29,7 +29,7 @@ final class Networking {
                     }
                 }
             } else if let response = response, let data = data {
-                print("Networking response:", response)
+//                print("Networking response:", response)
                 let image = UIImage(data: data)
                 
                 DispatchQueue.main.async {
