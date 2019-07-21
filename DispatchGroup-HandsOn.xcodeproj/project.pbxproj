@@ -54,14 +54,38 @@
 		FC69E9E522E487FA00AAC845 /* DispatchGroup-HandsOn */ = {
 			isa = PBXGroup;
 			children = (
+				FC69E9FA22E4882000AAC845 /* Controller */,
+				FC69E9F922E4881E00AAC845 /* View */,
+				FC69E9F822E4881A00AAC845 /* Model */,
 				FC69E9E622E487FA00AAC845 /* AppDelegate.swift */,
-				FC69E9E822E487FA00AAC845 /* ViewController.swift */,
-				FC69E9EA22E487FA00AAC845 /* Main.storyboard */,
 				FC69E9ED22E487FD00AAC845 /* Assets.xcassets */,
 				FC69E9EF22E487FD00AAC845 /* LaunchScreen.storyboard */,
 				FC69E9F222E487FD00AAC845 /* Info.plist */,
 			);
 			path = "DispatchGroup-HandsOn";
+			sourceTree = "<group>";
+		};
+		FC69E9F822E4881A00AAC845 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FC69E9F922E4881E00AAC845 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FC69E9EA22E487FA00AAC845 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FC69E9FA22E4882000AAC845 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FC69E9E822E487FA00AAC845 /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
