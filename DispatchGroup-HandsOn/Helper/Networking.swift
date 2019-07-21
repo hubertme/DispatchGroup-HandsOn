@@ -14,14 +14,27 @@ final class Networking {
     
     private init() {}
     
-    func fetchImageFromServer(stringUrl: String, _ completion : @escaping (UIImage) -> Void) {
+    func fetchImageFromServer(stringUrl: String, successCompletion : @escaping (UIImage?) -> Void, failCompletion: (() -> Void)? = nil) {
         guard let url = URL(string: stringUrl) else {
             fatalError("Invalid URL")
         }
+        let urlRequest = URLRequest(url: url)
         
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            if let response = response {
-                print(response)
+        URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+            if let error = error {
+                print("Error in networking", error.localizedDescription)
+                if let failCompletion = failCompletion {
+                    DispatchQueue.main.async {
+                        failCompletion()
+                    }
+                }
+            } else if let response = response, let data = data {
+                print("Networking response:", response)
+                let image = UIImage(data: data)
+                
+                DispatchQueue.main.async {
+                    successCompletion(image)
+                }
             }
         }.resume()
     }
