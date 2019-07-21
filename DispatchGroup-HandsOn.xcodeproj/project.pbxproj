@@ -14,6 +14,7 @@
 		FC69E9F122E487FD00AAC845 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC69E9EF22E487FD00AAC845 /* LaunchScreen.storyboard */; };
 		FC69E9FC22E488A300AAC845 /* Data.json in Resources */ = {isa = PBXBuildFile; fileRef = FC69E9FB22E488A300AAC845 /* Data.json */; };
 		FC69E9FE22E48B5B00AAC845 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC69E9FD22E48B5B00AAC845 /* Feed.swift */; };
+		FC69EA0122E48CE600AAC845 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC69EA0022E48CE600AAC845 /* Networking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		FC69E9F222E487FD00AAC845 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC69E9FB22E488A300AAC845 /* Data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Data.json; sourceTree = "<group>"; };
 		FC69E9FD22E48B5B00AAC845 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		FC69EA0022E48CE600AAC845 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		FC69E9E522E487FA00AAC845 /* DispatchGroup-HandsOn */ = {
 			isa = PBXGroup;
 			children = (
+				FC69E9FF22E48CD400AAC845 /* Helper */,
 				FC69E9FA22E4882000AAC845 /* Controller */,
 				FC69E9F922E4881E00AAC845 /* View */,
 				FC69E9F822E4881A00AAC845 /* Model */,
@@ -92,6 +95,14 @@
 				FC69E9E822E487FA00AAC845 /* ViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		FC69E9FF22E48CD400AAC845 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				FC69EA0022E48CE600AAC845 /* Networking.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +180,7 @@
 				FC69E9E922E487FA00AAC845 /* ViewController.swift in Sources */,
 				FC69E9FE22E48B5B00AAC845 /* Feed.swift in Sources */,
 				FC69E9E722E487FA00AAC845 /* AppDelegate.swift in Sources */,
+				FC69EA0122E48CE600AAC845 /* Networking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
