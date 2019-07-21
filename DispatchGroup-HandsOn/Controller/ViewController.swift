@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
+    
+    var feedData = [Feed]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +25,8 @@ class ViewController: UIViewController {
         }) {
             print("Fail to load image")
         }
+        
+        feedData = Networking.shared.fetchDummyData()
     }
 }
 
