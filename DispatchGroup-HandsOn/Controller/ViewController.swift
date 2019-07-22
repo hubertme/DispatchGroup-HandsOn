@@ -10,8 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var feedData = [Feed]()
-    var data = [(String, UIImage?)]()
+    var tableViewDataSource = [(String, UIImage?)]()
     
     let dispatchGroup = DispatchGroup()
     
@@ -28,17 +27,15 @@ class ViewController: UIViewController {
     }
     
     private func setupElements() {
-        self.feedTableView.register(FeedCell.nib, forCellReuseIdentifier: FeedCell.cellDescription)
-        
         self.feedTableView.delegate = self
         self.feedTableView.dataSource = self
     }
     
     private func setupData() {
-        self.feedData = Networking.shared.fetchDummyData()
-        self.feedData.forEach { [unowned self] feed in
+        let feedData = Networking.shared.fetchDummyData()
+        feedData.forEach { [unowned self] feed in
             Networking.shared.fetchImageFromServer(dispatchGroup: self.dispatchGroup, stringUrl: feed.imageURL, successCompletion: { (image) in
-                self.data.append((feed.feedName, image))
+                self.tableViewDataSource.append((feed.feedName, image))
             })
         }
     }
@@ -46,13 +43,13 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.data.count
+        return self.tableViewDataSource.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let feedCell = self.feedTableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as! FeedCell
-        let currentData = self.data[indexPath.row]
-        feedCell.parseData(feedName: currentData.0, feedImage: currentData.1)
+        let currentData = self.tableViewDataSource[indexPath.row]
+        feedCell.displayFeedCell(feedName: currentData.0, feedImage: currentData.1)
         
         return feedCell
     }

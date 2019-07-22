@@ -10,14 +10,6 @@ import UIKit
 
 class FeedCell: UITableViewCell {
     
-    static var nib: UINib {
-        return UINib(nibName: FeedCell.cellDescription, bundle: nil)
-    }
-    
-    static var cellDescription: String {
-        return String(describing: self)
-    }
-    
     @IBOutlet weak var feedImageView: UIImageView!
     @IBOutlet weak var feedNameLabel: UILabel!
     
@@ -25,7 +17,7 @@ class FeedCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    func parseData(feedName: String, feedImage: UIImage?) {
+    func displayFeedCell(feedName: String, feedImage: UIImage?) {
         self.feedImageView.image = feedImage
         self.feedNameLabel.text = feedName
     }
