@@ -10,7 +10,6 @@ import UIKit
 
 class FeedCell: UITableViewCell {
     
-    var feed: Feed?
     static var nib: UINib {
         return UINib(nibName: FeedCell.cellDescription, bundle: nil)
     }
@@ -26,18 +25,8 @@ class FeedCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    private func fetchFeedData() {
-        if let unwrappedFeed = feed {
-            self.feedNameLabel.text = unwrappedFeed.feedName
-            Networking.shared.fetchImageFromServer(stringUrl: unwrappedFeed.imageURL, successCompletion: { [unowned self] image in
-                
-                self.feedImageView.image = image
-            })
-        }
-    }
-    
-    func dependencyInjection(feed: Feed) {
-        self.feed = feed
-        self.fetchFeedData()
+    func parseData(feedName: String, feedImage: UIImage?) {
+        self.feedImageView.image = feedImage
+        self.feedNameLabel.text = feedName
     }
 }

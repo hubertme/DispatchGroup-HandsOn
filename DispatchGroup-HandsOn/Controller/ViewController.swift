@@ -37,28 +37,10 @@ class ViewController: UIViewController {
     private func setupData() {
         self.feedData = Networking.shared.fetchDummyData()
         self.feedData.forEach { [unowned self] feed in
-            self.fetchImage(feedName: feed.feedName, stringUrl: feed.imageURL)
+            Networking.shared.fetchImageFromServer(dispatchGroup: self.dispatchGroup, stringUrl: feed.imageURL, successCompletion: { (image) in
+                self.data.append((feed.feedName, image))
+            })
         }
-    }
-    
-    private func fetchImage(feedName: String, stringUrl: String) {
-        self.dispatchGroup.enter()
-        
-        guard let url = URL(string: stringUrl) else {
-            fatalError("Invalid URL")
-        }
-        let urlRequest = URLRequest(url: url)
-        
-        URLSession.shared.dataTask(with: urlRequest) { [unowned self] data, response, error in
-            if let error = error {
-                print("Error in networking", error.localizedDescription)
-            } else if let data = data {
-                let image = UIImage(data: data)
-                self.data.append((feedName, image))
-                
-                self.dispatchGroup.leave()
-            }
-        }.resume()
     }
 }
 
@@ -69,8 +51,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let feedCell = self.feedTableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as! FeedCell
-        feedCell.feedNameLabel.text = self.data[indexPath.row].0
-        feedCell.feedImageView.image = self.data[indexPath.row].1
+        let currentData = self.data[indexPath.row]
+        feedCell.parseData(feedName: currentData.0, feedImage: currentData.1)
         
         return feedCell
     }
