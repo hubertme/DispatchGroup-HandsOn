@@ -15,6 +15,8 @@ class FeedCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        self.selectionStyle = .none
     }
     
     func displayFeedCell(feedName: String, feedImage: UIImage?) {
